@@ -11,20 +11,27 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(15),
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              color.withOpacity(0.6),
-              color,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomCenter,
+    return InkWell(
+      onTap: () => Navigator.of(context)
+          .pushNamed('/category_meal_screen', arguments: title),
+      child: Container(
+        padding: const EdgeInsets.all(15),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                color.withOpacity(0.6),
+                color,
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomCenter,
+            ),
+            borderRadius: BorderRadius.circular(20)),
+        child: Center(
+          child: Text(
+            title,
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
-          borderRadius: BorderRadius.circular(20)),
-      child: Center(
-        child: Text(title),
+        ),
       ),
     );
   }

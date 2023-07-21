@@ -14,8 +14,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Delicasy App'),
+      ),
       body: Container(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage> {
           color: Colors.white,
         ),
         child: Padding(
-          padding: const EdgeInsets.only(top: 5, bottom: 8, right: 8, left: 8),
+          padding: const EdgeInsets.only(top: 15, bottom: 8, right: 8, left: 8),
           child: GridView(
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 200,
